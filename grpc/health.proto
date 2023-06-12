@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = "golang/grpc/proto";
+
+
+message HealthRequest {
+  string from = 1;
+}
+
+message HealthResponse {
+  string status = 1;
+}
+
+service HealthCheck {
+  // HealthCheck
+  rpc Ping (HealthRequest) returns (HealthResponse) {}
+}

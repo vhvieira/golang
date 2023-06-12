@@ -1,0 +1,16 @@
+//compile
+//protoc --go_out=.  --plugin=protoc-gen-go=C:/Users/victo/go/bin/protoc-gen-go.exe proto_test.proto
+syntax = "proto3";
+
+package mypackage;
+
+option go_package = "proto/client";
+
+message MyMessage {
+  string id = 1;
+  string content = 2;
+}
+
+service MyService {
+  rpc MyMethod (MyMessage) returns (MyMessage);
+}
